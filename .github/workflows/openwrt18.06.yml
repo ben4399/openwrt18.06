@@ -10,12 +10,12 @@
 name: OpenWrt18.06-CI
 on:
    push:
-    branches: 
-      - master
-  # schedule:
-  #   - cron: 0 20 * * *
-  # release:
-  #   types: [published]
+     branches: 
+       - master
+   schedule:
+     - cron: 0 20 * * *
+  release:
+    types: [published]
 
 jobs:
 
@@ -109,18 +109,18 @@ jobs:
            CONFIG_TARGET_x86_64_Generic=y
            EOF
           # 固件压缩:
-          #  cat >> .config <<EOF
-          #  CONFIG_TARGET_IMAGES_GZIP=y
-          #  EOF
+             cat >> .config <<EOF
+             CONFIG_TARGET_IMAGES_GZIP=y
+             EOF
           # 编译UEFI固件:
             cat >> .config <<EOF
             CONFIG_EFI_IMAGES=y
             EOF
           # IPv6支持:
-          # cat >> .config <<EOF
-          # CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-          # CONFIG_PACKAGE_ipv6helper=y
-          # EOF
+            cat >> .config <<EOF
+            CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+            CONFIG_PACKAGE_ipv6helper=y
+            EOF
           # 多文件系统支持:
           # cat >> .config <<EOF
           # CONFIG_PACKAGE_kmod-fs-nfs=y
@@ -145,7 +145,7 @@ jobs:
             CONFIG_PACKAGE_luci-app-baidupcs-web=y
           # CONFIG_PACKAGE_luci-app-docker=y
           # CONFIG_PACKAGE_luci-lib-docker=y
-          # CONFIG_PACKAGE_luci-app-dockerman=y
+            CONFIG_PACKAGE_luci-app-dockerman=y
             CONFIG_PACKAGE_luci-app-diskman=y
             CONFIG_PACKAGE_luci-app-aliddns=y
             CONFIG_PACKAGE_luci-app-rclone=y
@@ -185,9 +185,9 @@ jobs:
             CONFIG_PACKAGE_luci-app-smartdns=y
           # CONFIG_PACKAGE_kmod-tcp-bbr-mod=y
             CONFIG_PACKAGE_kmod-tcp-bbr-nanqinlang=y
-            CONFIG_PACKAGE_luci-app-vssr=y
-            CONFIG_PACKAGE_luci-app-ssr-plus-Jo=y
-          #  CONFIG_PACKAGE_luci-app-ssr-plus-lean=y
+          # CONFIG_PACKAGE_luci-app-vssr=y
+          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo=y
+            CONFIG_PACKAGE_luci-app-ssr-plus-lean=y
             CONFIG_PACKAGE_luci-app-advanced-reboot=y
             CONFIG_PACKAGE_luci-app-amule=y
             CONFIG_PACKAGE_luci-app-oaf=y
@@ -204,7 +204,7 @@ jobs:
             CONFIG_PACKAGE_luci-app-control-webrestriction=y
             CONFIG_PACKAGE_luci-app-control-weburl=y
             CONFIG_PACKAGE_luci-app-dnspod=y
-          # CONFIG_PACKAGE_luci-app-filebrowser=y
+            CONFIG_PACKAGE_luci-app-filebrowser=y
           # CONFIG_PACKAGE_luci-app-fileassistant=y
             CONFIG_PACKAGE_luci-app-haproxy-tcp=y
           # CONFIG_PACKAGE_luci-app-mentohust=y
