@@ -74,7 +74,7 @@ jobs:
         run: |
           rm -f ./.config*
           touch ./.config
-          #
+          # https://www.right.com.cn/forum/thread-1811791-1-1.html
           # ========================固件定制部分=======================
           # 
           # 
